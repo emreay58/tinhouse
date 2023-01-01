@@ -1,0 +1,57 @@
+{% load static %}
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="border-start border-5 border-primary ps-4 mb-5">
+                <h6 class="text-body text-uppercase mb-2">Müşteri Yorumları</h6>
+                <h2 class="display-6 mb-0">Hakkımızda Söylenenler</h2>
+              </div>
+              <p class="mb-4">
+                Mutlu Müşteri profilimize sizlerde eklenmek ister misiniz? Hayal ettiğiniz Tiny House ve Karavan modellemizle siz değerli
+                müşterilerimizin hizmetindeyiz.
+              </p>
+              <div class="row g-4">
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-users fa-2x text-primary flex-shrink-0"></i>
+                    <h2 class="ms-3 mb-0">8+</h2>
+                  </div>
+                  <h5 class="mb-0">Mevcut Projeler</h5>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-check fa-2x text-primary flex-shrink-0"></i>
+                    <h1 class="ms-3 mb-0">38+</h1>
+                  </div>
+                  <h5 class="mb-0">Tamamlanan Projeler</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="owl-carousel testimonial-carousel">
+                {% for yorum in yorum  %}
+                <div class="testimonial-item">
+                  <img
+                    class="img-fluid mb-4"
+                    src="{{yorum.img.url}}"
+                    alt=""
+                  />
+                  <p class="fs-5">
+                   {{yorum.yorum}}
+                  </p>
+                  <div
+                    class="bg-primary mb-3"
+                    style="width: 60px; height: 5px"
+                  ></div>
+                  <h5>{{yorum.name}}</h5>
+                  <span>{{yorum.unvan}}</span>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial End -->

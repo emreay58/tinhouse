@@ -1,0 +1,95 @@
+    <!-- Appointment Start -->
+    <div
+      class="container-fluid appointment my-5 py-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-5 col-md-6 wow fadeIn" data-wow-delay="0.3s">
+            <div class="border-start border-5 border-primary ps-4 mb-5">
+              <h6 class="text-white text-uppercase mb-2">Star Tiny House Randevu Kaydı</h6>
+              <h1 class="display-6 text-white mb-0">
+               Teklif Kaydı Oluştur
+              </h1>
+            </div>
+            <p class="text-white mb-0">
+             Lütfen teklif formunu oluşturup bize gönderiniz. En kısa sürede sizinle iletişime geçeceğiz.
+            </p>
+          </div>
+          <div class="col-lg-7 col-md-6 wow fadeIn" data-wow-delay="0.5s">
+            
+            <form method="POST" role="form" data-aos="fade-up" data-aos-delay="100">            
+              {% csrf_token %}
+              {% if kayit %}
+                <div class="alert alert-success">
+                  <p>{{ kayit }}</p>
+                </div>
+              {% endif %}
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control bg-dark border-0"
+                      name="username"
+                      placeholder="Adınız"
+                    />
+                    <label for="name">Adınız Soyadınız</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input
+                      type="email"
+                      class="form-control bg-dark border-0"
+                      name="email"
+                      placeholder="Gurdian Email"
+                    />
+                    <label for="email">E Mailiniz</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control bg-dark border-0"
+                      name="tel"
+                      placeholder="Gurdian Email"
+                    />
+                    <label for="tel">Telefon</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control bg-dark border-0"
+                      name="konu"
+                      placeholder="Modeliniz"
+                    />
+                    <label for="konu">Konu</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control bg-dark border-0"
+                      placeholder="Lütfen Mesajı Buraya Yazın"
+                      name="mesaj"
+                      style="height: 100px"
+                    ></textarea>
+                    <label for="mesaj">Mesajınız</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary w-100 py-3" type="submit">
+                    Randevu Oluştur
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Appointment End -->
